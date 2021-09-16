@@ -1,0 +1,439 @@
+; Copyright (c) 2013 Qualcomm Technologies, Inc.
+; All Rights Reserved.
+; Qualcomm Technologies Proprietary and Confidential.
+
+[Version]
+Signature          = "$Windows NT$"
+Provider           = %ProviderName%
+Class              = Bluetooth
+CLASSGUID          = {e0cbf06c-cd8b-4647-bb8a-263b43f0f974};
+DriverVer=01/24/2019,10.0.3.19
+CatalogFile.NT     = btfilter.cat
+
+[DestinationDirs]
+Btfilter.Files     = 12
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SourceDisksNames]
+1 = %SourceDisk%,,1
+
+[SourceDisksFiles]
+btfilter.sys = 1,,
+AthrBT_0x31010100.dfu = 1,,
+ramps_0x31010100_40.dfu = 1,,
+ramps_0x31010100_40_0x01.dfu = 1,,
+ramps_0x31010100_40_0xf1.dfu = 1,,
+AthrBT_0x31010000.dfu = 1,,
+AthrBT_0x31010000_ss01.dfu = 1,,
+ramps_0x31010000_40.dfu = 1,,
+ramps_0x31010000_40_0x01.dfu = 1,,
+ramps_0x31010000_40_0x11.dfu = 1,,
+ramps_0x31010000_40_0x12.dfu = 1,,
+ramps_0x31010000_40_0x21.dfu = 1,,
+ramps_0x31010000_40_0x22.dfu = 1,,
+ramps_0x31010000_40_0xf0.dfu = 1,,
+ramps_0x31010000_40_0xf1.dfu = 1,,
+ramps_0x31010000_40_LV01.dfu = 1,,
+ramps_0x31010000_40_SS01.dfu = 1,,
+AdminService.exe = 1,,
+
+[Manufacturer]
+%ManufacturerName% = QCABT,NTamd64
+
+[QCABT.NTamd64]
+%VID_0CF3&PID_3002% = QCABTUSB, USB\VID_0CF3&PID_3002
+%VID_0CF3&PID_3004% = QCABTUSBRS4, USB\VID_0CF3&PID_3004
+%VID_0CF3&PID_3006% = QCABTUSB, USB\VID_0CF3&PID_3006&MI_02
+%VID_0CF3&PID_3008% = QCABTUSB, USB\VID_0CF3&PID_3008
+%VID_0CF3&PID_311D% = QCABTUSB, USB\VID_0CF3&PID_311D    ;HP
+%VID_0CF3&PID_311E% = QCABTUSB, USB\VID_0CF3&PID_311E    ;HP
+%VID_0CF3&PID_311F% = QCABTUSB, USB\VID_0CF3&PID_311F    ;HP
+%VID_0CF3&PID_3121% = QCABTUSB, USB\VID_0CF3&PID_3121    ;HP
+%VID_0CF3&PID_3122% = QCABTUSB, USB\VID_0CF3&PID_3122    ;HP
+%VID_0CF3&PID_312D% = QCABTUSB, USB\VID_0CF3&PID_312D&MI_02
+%VID_0CF3&PID_817A% = QCABTUSB, USB\VID_0CF3&PID_817A    ;DELL
+%VID_0CF3&PID_E003% = QCABTUSB, USB\VID_0CF3&PID_E003    ;DELL
+%VID_0CF3&PID_E004% = QCABTUSB, USB\VID_0CF3&PID_E004    ;DELL
+%VID_0CF3&PID_E019% = QCABTUSB, USB\VID_0CF3&PID_E019    ;Foxconn_Acer
+%VID_0CF3&PID_E020% = QCABTUSB, USB\VID_0CF3&PID_E020    ;Foxconn_Samsung
+%VID_0CF3&PID_E021% = QCABTUSB, USB\VID_0CF3&PID_E021    ;Foxconn_WB
+
+%VID_0489&PID_E015% = QCABTUSB, USB\VID_0489&PID_E015    ;Foxconn
+%VID_0489&PID_E02C% = QCABTUSB, USB\VID_0489&PID_E02C    ;Foxconn_Acer_BU12
+%VID_0489&PID_E03C% = QCABTUSB, USB\VID_0489&PID_E03C    ;Acer
+%VID_0489&PID_E027% = QCABTUSB, USB\VID_0489&PID_E027
+%VID_0489&PID_E036% = QCABTUSB, USB\VID_0489&PID_E036
+%VID_0489&PID_E03D% = QCABTUSB, USB\VID_0489&PID_E03D
+%VID_0489&PID_E043% = QCABTUSB, USB\VID_0489&PID_E043
+%VID_0489&PID_E048% = QCABTUSB, USB\VID_0489&PID_E048
+%VID_0489&PID_E04A% = QCABTUSB, USB\VID_0489&PID_E04A
+%VID_0489&PID_E04C% = QCABTUSB, USB\VID_0489&PID_E04C
+%VID_0489&PID_E04D% = QCABTUSB, USB\VID_0489&PID_E04D
+%VID_0489&PID_E04E% = QCABTUSB, USB\VID_0489&PID_E04E
+%VID_0489&PID_E056% = QCABTUSB, USB\VID_0489&PID_E056
+%VID_0489&PID_E057% = QCABTUSB, USB\VID_0489&PID_E057
+%VID_0489&PID_E05F% = QCABTUSB, USB\VID_0489&PID_E05F
+%VID_0489&PID_E060% = QCABTUSB, USB\VID_0489&PID_E060
+%VID_0489&PID_E061% = QCABTUSB, USB\VID_0489&PID_E061
+%VID_0489&PID_E076% = QCABTUSB, USB\VID_0489&PID_E076
+%VID_0489&PID_E078% = QCABTUSB, USB\VID_0489&PID_E078
+%VID_0489&PID_E07D% = QCABTUSB, USB\VID_0489&PID_E07D
+%VID_0489&PID_E081% = QCABTUSB, USB\VID_0489&PID_E081
+%VID_0489&PID_E082% = QCABTUSB, USB\VID_0489&PID_E082
+%VID_0489&PID_E083% = QCABTUSB, USB\VID_0489&PID_E083
+%VID_0489&PID_E088% = QCABTUSB, USB\VID_0489&PID_E088
+%VID_0489&PID_E093% = QCABTUSB, USB\VID_0489&PID_E093
+%VID_0489&PID_E095% = QCABTUSB, USB\VID_0489&PID_E095
+
+%VID_13D3&PID_3283% = QCABTUSB, USB\VID_13D3&PID_3283    ;Azurewave_AW-BT260
+%VID_13D3&PID_3293% = QCABTUSB, USB\VID_13D3&PID_3293    ;Azurewave_AW-BT261_6pin
+%VID_13D3&PID_3294% = QCABTUSB, USB\VID_13D3&PID_3294    ;Azurewave_AW-BT261_8pin
+%VID_13D3&PID_3296% = QCABTUSB, USB\VID_13D3&PID_3296    ;Azurewave_Janus
+%VID_13D3&PID_3304% = QCABTUSB, USB\VID_13D3&PID_3304    ;Azurewave_Janus_3304
+%VID_13D3&PID_3320% = QCABTUSB, USB\VID_13D3&PID_3320    ;Azurewave_AW-BT042
+%VID_13D3&PID_3362% = QCABTUSB, USB\VID_13D3&PID_3362    ;AZW
+%VID_13D3&PID_3363% = QCABTUSB, USB\VID_13D3&PID_3363    ;AZW
+%VID_13D3&PID_3373% = QCABTUSB, USB\VID_13D3&PID_3373    ;AZW
+%VID_13D3&PID_3374% = QCABTUSB, USB\VID_13D3&PID_3374    ;AZW
+%VID_13D3&PID_3375% = QCABTUSB, USB\VID_13D3&PID_3375    ;AZW
+%VID_13D3&PID_3393% = QCABTUSB, USB\VID_13D3&PID_3393    ;AZW
+%VID_13D3&PID_3395% = QCABTUSB, USB\VID_13D3&PID_3395    ;AZW
+%VID_13D3&PID_3397% = QCABTUSB, USB\VID_13D3&PID_3397    ;AZW
+%VID_13D3&PID_3398% = QCABTUSB, USB\VID_13D3&PID_3398    ;AZW
+%VID_13D3&PID_3402% = QCABTUSB, USB\VID_13D3&PID_3402    ;AZW
+%VID_13D3&PID_3408% = QCABTUSB, USB\VID_13D3&PID_3408    ;AZW
+%VID_13D3&PID_3422% = QCABTUSB, USB\VID_13D3&PID_3422    ;AZW
+%VID_13D3&PID_3423% = QCABTUSBRS4SCAN, USB\VID_13D3&PID_3423    ;AZW
+%VID_13D3&PID_3424% = QCABTUSB, USB\VID_13D3&PID_3424    ;AZW
+%VID_13D3&PID_3430% = QCABTUSB, USB\VID_13D3&PID_3430
+%VID_13D3&PID_3429% = QCABTUSB, USB\VID_13D3&PID_3429
+%VID_13D3&PID_3432% = QCABTUSB, USB\VID_13D3&PID_3432
+%VID_13D3&PID_3460% = QCABTUSB, USB\VID_13D3&PID_3460
+%VID_13D3&PID_3472% = QCABTUSB, USB\VID_13D3&PID_3472    ;AUSU
+%VID_13D3&PID_3474% = QCABTUSB, USB\VID_13D3&PID_3474
+%VID_13D3&PID_3478% = QCABTUSB, USB\VID_13D3&PID_3478
+%VID_13D3&PID_3480% = QCABTUSB, USB\VID_13D3&PID_3480
+%VID_13D3&PID_3487% = QCABTUSB, USB\VID_13D3&PID_3487
+%VID_13D3&PID_3489% = QCABTUSB, USB\VID_13D3&PID_3489
+%VID_13D3&PID_3490% = QCABTUSBRS4SCAN, USB\VID_13D3&PID_3490
+
+%VID_04CA&PID_3000% = QCABTUSB, USB\VID_04CA&PID_3000    ;LiteOn
+%VID_04CA&PID_3001% = QCABTUSB, USB\VID_04CA&PID_3001    ;Acer-LiteOn
+%VID_04CA&PID_3002% = QCABTUSB, USB\VID_04CA&PID_3002
+%VID_04CA&PID_3004% = QCABTUSB, USB\VID_04CA&PID_3004
+%VID_04CA&PID_3005% = QCABTUSB, USB\VID_04CA&PID_3005
+%VID_04CA&PID_3006% = QCABTUSB, USB\VID_04CA&PID_3006
+%VID_04CA&PID_3007% = QCABTUSB, USB\VID_04CA&PID_3007
+%VID_04CA&PID_3008% = QCABTUSB, USB\VID_04CA&PID_3008
+%VID_04CA&PID_3009% = QCABTUSB, USB\VID_04CA&PID_3009
+%VID_04CA&PID_300A% = QCABTUSB, USB\VID_04CA&PID_300A
+%VID_04CA&PID_300B% = QCABTUSB, USB\VID_04CA&PID_300B
+%VID_04CA&PID_300C% = QCABTUSB, USB\VID_04CA&PID_300C
+%VID_04CA&PID_300D% = QCABTUSB, USB\VID_04CA&PID_300D
+%VID_04CA&PID_300F% = QCABTUSB, USB\VID_04CA&PID_300F
+%VID_04CA&PID_3010% = QCABTUSBRS4SCAN, USB\VID_04CA&PID_3010
+%VID_04CA&PID_3014% = QCABTUSB, USB\VID_04CA&PID_3014
+%VID_04CA&PID_3018% = QCABTUSBRS4SCAN, USB\VID_04CA&PID_3018
+%VID_04CA&PID_17EA% = QCABTUSB, USB\VID_04CA&PID_17EA
+%VID_04CA&PID_301D% = QCABTUSB, USB\VID_04CA&PID_301D
+
+%VID_1690&PID_0751% = QCABTUSB, USB\VID_1690&PID_0751    ;Askey_Janus
+%VID_1690&PID_0754% = QCABTUSB, USB\VID_1690&PID_0754    ;Askey_Janus2
+%VID_1690&PID_0755% = QCABTUSB, USB\VID_1690&PID_0755    ;Askey_Janus2
+%VID_1690&PID_0763% = QCABTUSB, USB\VID_1690&PID_0763    ;Askey_Janus2
+%VID_1690&PID_0765% = QCABTUSB, USB\VID_1690&PID_0765    ;AZW
+
+%VID_04F2&PID_AFF1% = QCABTUSB, USB\VID_04F2&PID_AFF1    ;Xavi
+%VID_04F2&PID_AFF3% = QCABTUSB, USB\VID_04F2&PID_AFF3    ;Xavi
+%VID_04F2&PID_AFF4% = QCABTUSB, USB\VID_04F2&PID_AFF4    ;Xavi
+%VID_04F2&PID_AFFD% = QCABTUSB, USB\VID_04F2&PID_AFFD    ;Xavi
+%VID_04F2&PID_AFFE% = QCABTUSB, USB\VID_04F2&PID_AFFE    ;Xavi
+
+%VID_0930&PID_0215% = QCABTUSB, USB\VID_0930&PID_0215    ;Askey_Toshiba
+%VID_0930&PID_0218% = QCABTUSB, USB\VID_0930&PID_0218    ;Toshiba
+%VID_0930&PID_0219% = QCABTUSB, USB\VID_0930&PID_0219    ;Toshiba
+%VID_0930&PID_021C%=  QCABTUSB, USB\VID_0930&PID_021C    ;Toshiba
+%VID_0930&PID_0220% = QCABTUSB, USB\VID_0930&PID_0220    ;Toshiba
+%VID_0930&PID_0227% = QCABTUSB, USB\VID_0930&PID_0227    ;Toshiba
+%VID_0930&PID_0228% = QCABTUSB, USB\VID_0930&PID_0228    ;Toshiba
+%VID_0930&PID_022A% = QCABTUSB, USB\VID_0930&PID_022A    ;Toshiba
+
+%VID_0A5C&PID_E027% = QCABTUSB, USB\VID_0A5C&PID_E027    ;Foxconn
+%VID_0A5C&PID_E028% = QCABTUSB, USB\VID_0A5C&PID_E028    ;Foxconn_WB_2
+
+%VID_0B05&PID_1783% = QCABTUSB, USB\VID_0B05&PID_1783    ;Asus
+%VID_0B05&PID_179C% = QCABTUSB, USB\VID_0B05&PID_179C    ;Asus01
+%VID_0B05&PID_17D0% = QCABTUSB, USB\VID_0B05&PID_17D0    ;Asus02
+
+%VID_145F&PID_0197% = QCABTUSB, USB\VID_145F&PID_0197
+%VID_145F&PID_0198% = QCABTUSB, USB\VID_145F&PID_0198
+
+%VID_10AB&PID_0063% = QCABTUSB, USB\VID_10AB&PID_0063
+%VID_10AB&PID_0064% = QCABTUSB, USB\VID_10AB&PID_0064
+
+%VID_03F0&PID_311D% = QCABTUSB, USB\VID_03F0&PID_311D    ;HP
+%VID_04C5&PID_1330% = QCABTUSB, USB\VID_04C5&PID_1330
+%VID_04C5&PID_1471% = QCABTUSB, USB\VID_04C5&PID_1471
+%VID_05AC&PID_8282% = QCABTUSB, USB\VID_05AC&PID_8282    ;Apple
+%VID_5160&PID_30B0% = QCABTUSB, USB\VID_5160&PID_30B0    ;WNC_DELL
+
+%VID_10AB&PID_0081% = QCABTUSB, USB\VID_10AB&PID_0081    ;WiGig
+%VID_10AB&PID_0088% = QCABTUSB, USB\VID_10AB&PID_0088    ;WiGig
+
+;Generic OEM sections
+[QCABTUSB]
+include    = bth.inf
+needs      = BthUsb.NT
+CopyFiles  = BtFilter.Files
+
+[QCABTUSB.HW]
+include    = bth.inf
+needs      = BthUsb.NT.HW
+AddReg     = BtFilter.HW.AddReg
+
+[QCABTUSB.Services]
+include    = bth.inf
+needs      = BthUsb.NT.Services
+AddService = BtFilter,,BtFilterService
+AddService = AtherosSvc,0x00000800,Adminservice
+
+
+[BtFilter.HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"BtFilter"
+HKR,,"LowerFilters",0x00010000,"BtFilter"
+
+[BtFilterService]
+DisplayName    = "BtFilter"
+ServiceType    = 1 ; KERNEL_DRIVER
+StartType      = 3 ; DEMAND START
+ErrorControl   = 1 ; ERROR_NORMAL
+ServiceBinary  = %12%\btfilter.sys
+AddReg         = BtFilter.AddReg
+
+[Adminservice]
+DisplayName    = "AtherosSvc"
+ServiceType    = 0x10 ; SERVICE_WIN32_OWN_PROCESS
+StartType      = 2 ; SERVICE_AUTO_START
+ErrorControl   = 0 ; ERROR_NORMAL
+ServiceBinary  = %12%\AdminService.exe
+
+;RS4 Start, add registries VsMsftOpCode and EnableDeviceErrorRecovery 
+[QCABTUSBRS4]
+include    = bth.inf
+needs      = BthUsb.NT
+CopyFiles  = BtFilter.Files
+
+[QCABTUSBRS4.HW]
+include    = bth.inf
+needs      = BthUsb.NT.HW
+AddReg     = BtFilterRS4.HW.AddReg
+
+[QCABTUSBRS4.Services]
+include    = bth.inf
+needs      = BthUsb.NT.Services
+AddService = BtFilter,,BtFilterService
+AddService = AtherosSvc,0x00000800,Adminservice
+
+[BtFilterRS4.HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"BtFilter"
+HKR,,"LowerFilters",0x00010000,"BtFilter"
+;HKR,,"VsMsftOpCode",0x00010001,0xFD70
+HKR,,"EnableDeviceErrorRecovery",0x00010001,1
+;RS4 End
+
+;RS4 scan start, add registry DisablePageScan.
+[QCABTUSBRS4SCAN]
+include    = bth.inf
+needs      = BthUsb.NT
+CopyFiles  = BtFilter.Files
+
+[QCABTUSBRS4SCAN.HW]
+include    = bth.inf
+needs      = BthUsb.NT.HW
+AddReg     = QCABTUSBRS4SCAN.HW.AddReg
+
+[QCABTUSBRS4SCAN.Services]
+include    = bth.inf
+needs      = BthUsb.NT.Services
+AddService = BtFilter,,BtFilterService
+AddService = AtherosSvc,0x00000800,Adminservice
+
+[QCABTUSBRS4SCAN.HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"BtFilter"
+HKR,,"LowerFilters",0x00010000,"BtFilter"
+HKR,,"QCADisablePageScan",0x00010001,1
+;RS4 scan end
+
+[BtFilter.AddReg]
+HKR,Parameters,FirmwareBinFolder,0x00000,"\SystemRoot\System32\drivers\"
+HKR,Parameters,BtFilterWakeUpEnable,0x00010003,0
+HKR,Parameters,BtFilterDeviceDetection,0x00010003,0
+HKR,Parameters,DownloadFirmwareFlags,0x00010001,7
+
+;Common sections
+[BtFilter.Files]
+btfilter.sys
+AthrBT_0x31010100.dfu
+ramps_0x31010100_40.dfu
+ramps_0x31010100_40_0x01.dfu
+ramps_0x31010100_40_0xf1.dfu
+AthrBT_0x31010000.dfu
+AthrBT_0x31010000_ss01.dfu
+ramps_0x31010000_40.dfu
+ramps_0x31010000_40_0x01.dfu
+ramps_0x31010000_40_0x11.dfu
+ramps_0x31010000_40_0x12.dfu
+ramps_0x31010000_40_0x21.dfu
+ramps_0x31010000_40_0x22.dfu
+ramps_0x31010000_40_0xf0.dfu
+ramps_0x31010000_40_0xf1.dfu
+ramps_0x31010000_40_LV01.dfu
+ramps_0x31010000_40_SS01.dfu
+AdminService.exe
+
+
+[Strings]
+ProviderName       = "Qualcomm Atheros Communications"
+ManufacturerName   = "Qualcomm Atheros Communications"
+SourceDisk         = "Qualcomm Atheros CD"
+
+VID_0CF3&PID_3002  = "Qualcomm Atheros AR3011 Bluetooth 3.0"
+VID_0CF3&PID_3004  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0CF3&PID_3006  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+VID_0CF3&PID_3008  = "Qualcomm Atheros AR1005 Bluetooth 4.0 + HS Adapter"
+VID_0CF3&PID_311D  = "Qualcomm Atheros AR3012 Bluetooth 4.0 Adapter"
+VID_0CF3&PID_311E  = "Qualcomm Atheros AR9462 Bluetooth 4.0 Adapter"
+VID_0CF3&PID_311F  = "Qualcomm Atheros QCA9565 Bluetooth 4.0 Adapter"
+VID_0CF3&PID_3121  = "Qualcomm Atheros QCA9565 Bluetooth 4.0 Adapter"
+VID_0CF3&PID_3122  = "Qualcomm Atheros QCA9565 Bluetooth 4.0"
+VID_0CF3&PID_312D  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS Adapter"
+VID_0CF3&PID_817A  = "Dell Wireless 1601 Bluetooth Device"
+VID_0CF3&PID_E003  = "Dell Wireless 1901 Bluetooth"
+VID_0CF3&PID_E004  = "Dell Wireless 1703 Bluetooth"
+VID_0CF3&PID_E019  = "General Bluetooth Device"
+VID_0CF3&PID_E020  = "General Bluetooth Device"
+VID_0CF3&PID_E021  = "General Bluetooth Device"
+
+VID_0489&PID_E015  = "Bluetooth 2.1 Module"
+VID_0489&PID_E02C  = "Qualcomm Atheros AR3011 Bluetooth 3.0"
+VID_0489&PID_E03C  = "Bluetooth USB Module"
+VID_0489&PID_E027  = "Qualcomm Atheros AR3011 Bluetooth(R) Adapter"
+VID_0489&PID_E036  = "Qualcomm Atheros AR3012 Bluetooth(R) Adapter"
+VID_0489&PID_E03D  = "Bluetooth Module"
+VID_0489&PID_E043  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+VID_0489&PID_E048  = "Bluetooth USB Module"
+VID_0489&PID_E04A  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+VID_0489&PID_E04C  = "Bluetooth USB Module"
+VID_0489&PID_E04D  = "Qualcomm Atheros AR3012 Bluetooth(R) Adapter"
+VID_0489&PID_E04E  = "Bluetooth USB Module"
+VID_0489&PID_E056  = "Bluetooth USB Module"
+VID_0489&PID_E057  = "Bluetooth USB Module"
+VID_0489&PID_E05F  = "Bluetooth USB Module"
+VID_0489&PID_E060  = "Bluetooth USB Module"
+VID_0489&PID_E061  = "Bluetooth USB Module"
+VID_0489&PID_E076  = "Bluetooth USB Module"
+VID_0489&PID_E078  = "Bluetooth USB Module"
+VID_0489&PID_E07D  = "Bluetooth USB Module"
+VID_0489&PID_E081  = "Bluetooth USB Module"
+VID_0489&PID_E082  = "Bluetooth USB Module"
+VID_0489&PID_E083  = "Bluetooth USB Module"
+VID_0489&PID_E088  = "Bluetooth USB Module"
+VID_0489&PID_E093  = "Qualcomm Atheros Bluetooth 4.0"
+VID_0489&PID_E095  = "Bluetooth USB Module"
+
+VID_13D3&PID_3283  = "Bluetooth 2.1 Module"
+VID_13D3&PID_3293  = "Bluetooth 2.1 Module"
+VID_13D3&PID_3294  = "Bluetooth 2.1 Module"
+VID_13D3&PID_3296  = "Bluetooth Module"
+VID_13D3&PID_3304  = "Bluetooth Module"
+VID_13D3&PID_3320  = "Bluetooth Module"
+VID_13D3&PID_3362  = "Bluetooth module"
+VID_13D3&PID_3363  = "Bluetooth class 1 module"
+VID_13D3&PID_3373  = "AR3012 BT with OTP"
+VID_13D3&PID_3374  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+VID_13D3&PID_3375  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_13D3&PID_3393  = "Qualcomm Atheros AR9462 Bluetooth 4.0"
+VID_13D3&PID_3395  = "Qualcomm Atheros AR9462 Bluetooth 4.0"
+VID_13D3&PID_3397  = "Qualcomm Atheros AR9462 Bluetooth 4.0"
+VID_13D3&PID_3398  = "Qualcomm Atheros AR9462 Bluetooth 4.0 + HS"
+VID_13D3&PID_3402  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_13D3&PID_3408  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3422  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3423  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3424  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3430  = "Qualcomm Atheros AR9462 Bluetooth 4.0"
+VID_13D3&PID_3429  = "Qualcomm Atheros AR9462 Bluetooth 4.0"
+VID_13D3&PID_3432  = "Bluetooth USB Module"
+VID_13D3&PID_3460  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3472  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3474  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3478  = "Qualcomm Atheros Bluetooth 4.0 + HS"
+VID_13D3&PID_3480  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3487  = "Qualcomm Atheros AR9462 Bluetooth 4.0"
+VID_13D3&PID_3489  = "Qualcomm Atheros Bluetooth 4.0"
+VID_13D3&PID_3490  = "Qualcomm Atheros Bluetooth 4.0"
+
+VID_04CA&PID_3000  = "Bluetooth USB Adapter"
+VID_04CA&PID_3001  = "Bluetooth USB Adapter"
+VID_04CA&PID_3002  = "Bluetooth Module"
+VID_04CA&PID_3004  = "Bluetooth USB Module"
+VID_04CA&PID_3005  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_04CA&PID_3006  = "Bluetooth USB Module"
+VID_04CA&PID_3007  = "Atheros AR9462 Bluetooth 4.0"
+VID_04CA&PID_3008  = "Bluetooth USB Module"
+VID_04CA&PID_3009  = "Atheros AR9462 Bluetooth 4.0 + HS"
+VID_04CA&PID_300A  = "Qualcomm Atheros QCA9565 Bluetooth 4.0 + HS Adapter"
+VID_04CA&PID_300B  = "Bluetooth USB Module"
+VID_04CA&PID_300C  = "Qualcomm Atheros Bluetooth 4.0 + HS Adapter"
+VID_04CA&PID_300D  = "Bluetooth USB Module"
+VID_04CA&PID_300F  = "Qualcomm Atheros Bluetooth 4.0"
+VID_04CA&PID_3010  = "Qualcomm Atheros Bluetooth 4.0"
+VID_04CA&PID_3014  = "Qualcomm Atheros Bluetooth 4.0"
+VID_04CA&PID_3018  = "Qualcomm Atheros Bluetooth 4.0"
+VID_04CA&PID_17EA  = "Qualcomm Atheros Bluetooth 4.0"
+VID_04CA&PID_301D  = "Bluetooth USB Module"
+
+VID_1690&PID_0751  = "Askey Bluetooth Adapter" 
+VID_1690&PID_0754  = "Bluetooth USB Adapter" 
+VID_1690&PID_0755  = "Bluetooth USB Adapter" 
+VID_1690&PID_0763  = "Bluetooth USB Adapter" 
+VID_1690&PID_0765  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+
+VID_04F2&PID_AFF1  = "Bluetooth USB Adapter"
+VID_04F2&PID_AFF3  = "Bluetooth USB Adapter"
+VID_04F2&PID_AFF4  = "Bluetooth USB Adapter"
+VID_04F2&PID_AFFD  = "Bluetooth USB Adapter"
+VID_04F2&PID_AFFE  = "Bluetooth USB Module"
+
+VID_0930&PID_0215  = "Bluetooth USB Adapter"
+VID_0930&PID_0218  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0930&PID_0219  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0930&PID_021C  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0930&PID_0220  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0930&PID_0227  = "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0930&PID_0228 =  "Qualcomm Atheros AR3012 Bluetooth 4.0"
+VID_0930&PID_022A =  "Qualcomm Atheros AR3012 Bluetooth 4.0"
+
+VID_0A5C&PID_E027  = "Bluetooth 2.1 Module"
+VID_0A5C&PID_E028  = "Qualcomm Atheros AR3011 Bluetooth 3.0"
+
+VID_0B05&PID_1783  = "ASUS Bluetooth v2.1 USB Adapter"
+VID_0B05&PID_179C  = "ASUS Bluetooth"
+VID_0B05&PID_17D0  = "Qualcomm Atheros AR9462 Bluetooth 4.0 + HS Adapter"
+
+VID_145F&PID_0197  = "Trust Bluetooth 2.1 Adapter"
+VID_145F&PID_0198  = "Trust Bluetooth 3.0 Adapter"
+
+VID_10AB&PID_0063  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+VID_10AB&PID_0064  = "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+
+VID_03F0&PID_311D  = "Qualcomm Atheros AR3011 Bluetooth 3.0 Adapter"
+VID_04C5&PID_1330  = "Qualcomm Atheros AR9462 Bluetooth 4.0 + HS Adapter"
+VID_04C5&PID_1471  = "Qualcomm Atheros Bluetooth 4.0"
+VID_05AC&PID_8282  = "Qualcomm Atheros AR3012 Bluetooth 3.0"
+VID_5160&PID_30B0  = "Bluetooth USB Adapter"
+
+VID_10AB&PID_0081  =  "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"
+VID_10AB&PID_0088  =  "Qualcomm Atheros AR3012 Bluetooth 4.0 + HS"

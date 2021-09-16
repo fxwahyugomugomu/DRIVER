@@ -1,0 +1,111 @@
+;/*++
+;
+;Copyright (c) 1990-1999 Microsoft Corporation All rights Reserved
+;
+;Module Name:
+;
+;    STATBUS.INF
+;
+;Abstract:
+;    INF file for installing duet bus enumerator driver
+;
+;Installation Notes:
+;    Using Devcon: Type "devcon install duetbus.inf root\duetbus" to install
+;
+;--*/
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%MSFT%
+DriverVer=03/20/2017,16.8.6.846
+CatalogFile=duetpencil.cat
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+duetbus.sys  = 1,,
+
+;*****************************************
+; DuetStatBus  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTamd64
+
+; For Win2K because it cannot parse decorated sections.
+[Standard]
+;
+; These are the duet bus pnp ids
+;
+%DuetStatBus.DeviceDesc%=DuetStatBus_Device, root\duetbus
+
+; For XP and later
+[Standard.NTamd64]
+%DuetStatBus.DeviceDesc%=DuetStatBus_Device, root\duetbus
+
+[DuetStatBus_Device.NT]
+CopyFiles=Drivers_Dir
+
+[DuetStatBus_Device.NT.HW]
+AddReg=DuetStatBus_Device.NT.AddReg
+
+[DuetStatBus_Device.NT.AddReg]                            
+HKR,,DeviceCharacteristics,0x10001,0x0100         ; Use same security checks on relative opens
+HKR,,Security,,"D:P(A;;GA;;;AU)(A;;GA;;;SY)"      ; Allow generic-all access to Built-in administrators and Local system 
+
+[Drivers_Dir]
+duetbus.sys
+
+
+;-------------- Service installation
+[DuetStatBus_Device.NT.Services]
+AddService = duetbus,%SPSVCINST_ASSOCSERVICE%, Duetbus_Service_Inst
+
+; -------------- statbus driver install sections
+[Duetbus_Service_Inst]
+DisplayName    = %duetbus.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\duetbus.sys
+LoadOrderGroup = Extended Base
+
+
+;
+;--- DuetStatBus_Device WDF Coinstaller installation ------
+;
+[DestinationDirs]
+DuetStatBus_Device_CoInstaller_CopyFiles = 11
+
+[TDuetStatBus_Device.NT.CoInstallers]
+AddReg=DuetStatBus_Device_CoInstaller_AddReg
+CopyFiles=DuetStatBus_Device_CoInstaller_CopyFiles
+
+[DuetStatBus_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01011.dll,WdfCoInstaller"
+
+[DuetStatBus_Device_CoInstaller_CopyFiles]
+WdfCoInstaller01011.dll
+
+[SourceDisksFiles]
+WdfCoInstaller01011.dll=1 ; make sure the number matches with SourceDisksNames
+
+[DuetStatBus_Device.NT.Wdf]
+KmdfService = duetbus, duetbus_wdfsect
+[duetbus_wdfsect]
+KmdfLibraryVersion = 1.11
+
+
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+MSFT = "Duet"
+StdMfg = "(Standard system devices)"
+DiskId1 = "Duet Static Bus Installation Disk #1"
+DuetStatBus.DeviceDesc = "Duet Static Bus Enumerator"
+duetbus.SVCDESC = "Duet Static Bus Enumerator"
